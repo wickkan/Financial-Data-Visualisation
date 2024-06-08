@@ -1,14 +1,15 @@
 package main
 
 import (
-    "fmt"
-    "net/http"
+	"net/http"
+
+	"github.com/wickkan/financial-data-visualisation/handlers"
 )
 
 func main() {
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Welcome to the Financial Data Visualization API")
-    })
+	http.HandleFunc("/", handlers.HomeHandler)
+	http.HandleFunc("/api/realtime", handlers.RealTimeDataHandler)
+	http.HandleFunc("/api/historical", handlers.HistoricalDataHandler)
 
-    http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", nil)
 }
