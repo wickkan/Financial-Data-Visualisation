@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/wickkan/financial-data-visualisation/handlers"
+	"github.com/wickkan/Financial-Data-Visualisation/tree/main/handlers"
 )
 
 func main() {
